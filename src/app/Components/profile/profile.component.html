@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+
+<div *ngIf="profile">
+  <h1>{{ profile.email }}</h1>
+  <h2>Bookings:</h2>
+  <ul>
+    <li *ngFor="let booking of profile.bookings">
+      <p>Passenger Name: {{ booking.passengerName }}</p>
+      <!-- <p>Email: {{ booking.email }}</p>
+      <p>Phone Number: {{ booking.phoneNumber }}</p>
+      <p>Age: {{ booking.age }}</p>
+      <p>Gender: {{ booking.gender }}</p>
+      <p>Cabin Class: {{ booking.cabinClass }}</p>
+      <p>No. of Tickets: {{ booking.noOfTicket }}</p> -->
+    </li>
+  </ul>
+</div>
+
+<p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>

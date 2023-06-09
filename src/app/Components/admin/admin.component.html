@@ -1,0 +1,28 @@
+<div *ngIf="flights">
+    <h1>Flight Management</h1>
+    <!-- <button (click)="createFlight()">Create Flight</button> -->
+    <table>
+      <thead>
+        <tr>
+          <th>Flight Number</th>
+          <th>Departure Airport</th>
+          <th>Arrival Airport</th>
+          <th>Departure Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights">
+          <td>{{ flight.flightNumber }}</td>
+          <td>{{ flight.departureAirport }}</td>
+          <td>{{ flight.arrivalAirport }}</td>
+          <td>{{ flight.departureTime | date:'yyyy-MM-dd HH:mm' }}</td>
+          <td>
+            <!-- <button (click)="editFlight(flight)">Edit</button>
+            <button (click)="deleteFlight(flight.id)">Delete</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
