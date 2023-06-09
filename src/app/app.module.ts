@@ -16,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProfileComponent } from './Components/profile/profile.component';
-import { AdminComponent } from './Components/admin/admin.component';
+import { AdminComponent } from './Components/AdminComponents/admin/admin.component';
+import { CreateFlightComponent } from './Components/AdminComponents/create-flight/create-flight.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AdminComponent } from './Components/admin/admin.component';
     HomeComponent,
     BookingComponent,
     ProfileComponent,
-    AdminComponent
+    AdminComponent,
+    CreateFlightComponent
    
 
   ],

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Flight } from 'src/app/Models/FlightModel';
 
@@ -12,6 +12,43 @@ export class FlightService {
   constructor(private http: HttpClient) { }
 
   getFlights(): Observable<Flight[]> {
-    return this.http.get<Flight[]>(`${this.baseUrl}Admin/flights`);
+    const headers = this.getAuthorizationHeaders();
+
+    return this.http.get<Flight[]>(`${this.baseUrl}Admin/flights`,{headers});
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  getAuthorizationHeaders(): HttpHeaders {
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.getToken()}`
+    });
+  }
+
+  getToken(){
+    return localStorage.getItem("token");
+  }
+  
 }

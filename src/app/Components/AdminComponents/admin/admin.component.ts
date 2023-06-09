@@ -8,7 +8,7 @@ import { Flight } from 'src/app/Models/FlightModel';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  flights: Flight[] = []; // Initialize the flights property
+  flights: Flight[] | undefined;
 
   constructor(private flightService: FlightService) { }
 
@@ -21,9 +21,11 @@ export class AdminComponent implements OnInit {
       (flights) => {
         this.flights = flights;
       },
-      (error: any) => {
+      (error) => {
         console.log('An error occurred while retrieving flights:', error);
       }
     );
   }
+
+ 
 }

@@ -9,7 +9,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
 import { BookingComponent } from './Components/booking/booking.component';
 import { AuthGuard1 } from './Guards/auth.guard';
 import { AuthGuard2 } from './Guards/signedin.guard';
-import { AdminComponent } from './Components/admin/admin.component';
+import { AdminComponent } from './Components/AdminComponents/admin/admin.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent, canActivate:[AuthGuard2]},

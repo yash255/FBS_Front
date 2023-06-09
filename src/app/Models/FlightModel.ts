@@ -39,3 +39,21 @@ export class Flight {
     }
   }
   
+
+
+
+// export interface Flight {
+//   id: number;
+//   flightNumber: string;
+//   departureAirport: string;
+//   arrivalAirport: string;
+//   departureTime: Date;
+//   arrivalTime: Date;
+//   price: number;
+//   cabinClasses: CabinClass[];
+// }
+
+// export interface CabinClass {
+//   name: string;
+//   noOfSeats: number;
+// }
