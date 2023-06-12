@@ -11,6 +11,7 @@ import { AuthGuard1 } from './Guards/auth.guard';
 import { AuthGuard2 } from './Guards/signedin.guard';
 import { AdminComponent } from './Components/AdminComponents/admin/admin.component';
 import { CreateFlightComponent } from './Components/AdminComponents/create-flight/create-flight.component';
+import { RegisterAdminComponent } from './Components/AdminComponents/register-admin/register-admin.component';
 //import { UpdateFlightComponent } from './Components/AdminComponents/update-flight/update-flight.component';
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'admin',component:AdminComponent},
   {path:'create-flight',component:CreateFlightComponent},
+  {path:'register-admin',component:RegisterAdminComponent},
 //  {path:'update-flight',component:UpdateFlightComponent},
   {path: 'booking/:flightId', component: BookingComponent, canActivate: [AuthGuard1]},
 ];

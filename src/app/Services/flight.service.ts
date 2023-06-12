@@ -11,10 +11,10 @@ export class FlightService {
 
   constructor(private http: HttpClient) { }
 
-  getFlights(): Observable<FlightDto[]> {
+  getFlights(): Observable<Flight[]> {
     const headers = this.getAuthorizationHeaders();
 
-    return this.http.get<FlightDto[]>(`${this.baseUrl}Admin/flights`,{headers});
+    return this.http.get<Flight[]>(`${this.baseUrl}Admin/flights`,{headers});
   }
 
   // createFlight(flight: Flight): Observable<Flight> {
@@ -41,6 +41,11 @@ export class FlightService {
   //   return this.http.put<void>(`${this.baseUrl}Admin/flights/${id}`, flight,{headers});
   // }
   
+  deleteFlight(id: number): Observable<any> {
+    const headers = this.getAuthorizationHeaders();
+
+    return this.http.delete(`${this.baseUrl}Admin/flights/${id}`,{headers});
+  }
 
 
 

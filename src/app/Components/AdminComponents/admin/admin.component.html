@@ -2,6 +2,7 @@
 <div *ngIf="flights">
     <h1>Flight Management</h1>
      <button (click)="createFlight()">Create Flight</button> 
+     <button (click)="registeradmin()">Register Admin</button>
     <table>
       <thead>
         <tr>
@@ -20,7 +21,7 @@
           <td>{{ flight.departureTime}}</td>
           <td>
             
-            <!-- <button (click)="updateflight(flight.id)">Update</button> -->
+            <button (click)="deleteFlight(flight.id)">Delete</button>
 
             </td>
           

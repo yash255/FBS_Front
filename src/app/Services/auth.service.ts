@@ -20,6 +20,11 @@ export class AuthService {
   signup(userObj:any): Observable<any>{
     return this.http.post<any>(`${this.baseUrl}Authenticate/register`,userObj)
   }
+
+  signupadmin(userObj:any): Observable<any>{
+    const headers = this.getAuthorizationHeaders();
+    return this.http.post<any>(`${this.baseUrl}Authenticate/register-admin`,userObj,{headers})
+  }
   login(loginObj: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}Authenticate/login`, loginObj);
   }
