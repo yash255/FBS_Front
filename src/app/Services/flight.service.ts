@@ -22,11 +22,14 @@ export class FlightService {
   //   return this.http.post<Flight>(`${this.baseUrl}Admin/flights`, flight);
   // }
 
-  createFlight(flight: Flight): Observable<Flight> {
+  // createFlight(flight: Flight): Observable<Flight> {
+  //   const headers = this.getAuthorizationHeaders();
+  //   return this.http.post<Flight>(`${this.baseUrl}Admin/flights`, flight, { headers });
+  // }
+  createFlight(flightDto: FlightDto): Observable<Flight> {
     const headers = this.getAuthorizationHeaders();
-    return this.http.post<Flight>(`${this.baseUrl}Admin/flights`, flight, { headers });
+    return this.http.post<Flight>(`${this.baseUrl}Admin/flights`, flightDto,{headers});
   }
-
   // getFlightById(id: number): Observable<FlightDto> {
   //   const headers = this.getAuthorizationHeaders();
   //   return this.http.get<FlightDto>(`${this.baseUrl}Admin/flights/${id}`,{headers});

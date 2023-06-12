@@ -18,7 +18,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { AdminComponent } from './Components/AdminComponents/admin/admin.component';
 import { CreateFlightComponent } from './Components/AdminComponents/create-flight/create-flight.component';
-import { UpdateFlightComponent } from './Components/AdminComponents/update-flight/update-flight.component';
+//import { UpdateFlightComponent } from './Components/AdminComponents/update-flight/update-flight.component';
 
 
 @NgModule({
@@ -32,8 +32,8 @@ import { UpdateFlightComponent } from './Components/AdminComponents/update-fligh
     BookingComponent,
     ProfileComponent,
     AdminComponent,
-    CreateFlightComponent,
-    UpdateFlightComponent
+    CreateFlightComponent
+ //   UpdateFlightComponent
    
    
 

@@ -1,4 +1,3 @@
-<app-navbar></app-navbar>
 <h2>Create New Flight</h2>
 
 <form (submit)="createFlight()">
@@ -43,7 +42,7 @@
       
       <div>
         <label>No. of Seats:</label>
-        <input type="number" [(ngModel)]="cabin.numberOfSeats" name="cabins[{{i}}].noOfSeats">
+        <input type="number" [(ngModel)]="cabin.noOfSeats" name="cabins[{{i}}].noOfSeats">
       </div>
 
       <button type="button" (click)="removeCabin(i)">Remove Cabin</button>

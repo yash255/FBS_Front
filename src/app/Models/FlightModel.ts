@@ -1,4 +1,4 @@
-export interface Flight {
+export interface FlightDto {
   flightNumber: string;
   departureAirport: string;
   arrivalAirport: string;
@@ -8,7 +8,7 @@ export interface Flight {
   cabins: CabinDto[];
 }
 
-export interface FlightDto {
+export interface Flight {
   id: number;
   flightNumber: string;
   departureAirport: string;
@@ -21,7 +21,7 @@ export interface FlightDto {
 
 export interface CabinDto {
   name: string;
-  numberOfSeats: number;
+  noOfSeats: number;
 }
 
 export interface Cabin {

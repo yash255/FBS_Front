@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { FlightService } from 'src/app/Services/flight.service';
-import { Flight, CabinDto } from 'src/app/Models/FlightModel';
+import { Flight, CabinDto,Cabin,FlightDto } from 'src/app/Models/FlightModel';
 
 @Component({
   selector: 'app-create-flight',
@@ -9,7 +9,7 @@ import { Flight, CabinDto } from 'src/app/Models/FlightModel';
   styleUrls: ['./create-flight.component.css']
 })
 export class CreateFlightComponent {
-  flightDto: Flight = {
+  flightDto: FlightDto = {
     flightNumber: '',
     departureAirport: '',
     arrivalAirport: '',
@@ -27,7 +27,7 @@ export class CreateFlightComponent {
   }
 
   addCabin(): void {
-    this.flightDto.cabins.push({ name: '', numberOfSeats: 0 });
+    this.flightDto.cabins.push({ name: '', noOfSeats: 0 });
   }
 
   removeCabin(index: number): void {
