@@ -14,6 +14,7 @@ export class AuthService {
   // }
 
   private baseUrl:string = "https://localhost:7176/api/"
+  private searchUrl:string = "https://localhost:7176/"
   constructor(private http : HttpClient,  private router: Router) { }
 
   signup(userObj:any): Observable<any>{
@@ -25,7 +26,7 @@ export class AuthService {
   search(searchObj: any): Observable<any[]> {
     const headers = this.getAuthorizationHeaders();
     const params = { ...searchObj }; // You can modify this if needed
-    return this.http.get<any[]>(`${this.baseUrl}Search`, { headers, params });
+    return this.http.get<any[]>(`${this.searchUrl}Search`, { headers, params });
   }
 
   

@@ -1,1 +1,58 @@
-<p>create-flight works!</p>
+<app-navbar></app-navbar>
+<h2>Create New Flight</h2>
+
+<form (submit)="createFlight()">
+  <div>
+    <label>Flight Number:</label>
+    <input type="text" [(ngModel)]="flightDto.flightNumber" name="flightNumber">
+  </div>
+
+  <div>
+    <label>Departure Airport:</label>
+    <input type="text" [(ngModel)]="flightDto.departureAirport" name="departureAirport">
+  </div>
+
+  <div>
+    <label>Arrival Airport:</label>
+    <input type="text" [(ngModel)]="flightDto.arrivalAirport" name="arrivalAirport">
+  </div>
+
+  <div>
+    <label>Departure Time:</label>
+    <input type="datetime-local" [(ngModel)]="flightDto.departureTime" name="departureTime">
+  </div>
+
+  <div>
+    <label>Arrival Time:</label>
+    <input type="datetime-local" [(ngModel)]="flightDto.arrivalTime" name="arrivalTime">
+  </div>
+
+  <div>
+    <label>Price:</label>
+    <input type="number" [(ngModel)]="flightDto.price" name="price">
+  </div>
+
+  <div>
+    <div *ngFor="let cabin of flightDto.cabins; let i=index">
+      <hr>
+      <h3>Cabin {{i+1}}</h3>
+      <div>
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="cabin.name" name="cabins[{{i}}].name">
+      </div>
+      
+      <div>
+        <label>No. of Seats:</label>
+        <input type="number" [(ngModel)]="cabin.numberOfSeats" name="cabins[{{i}}].noOfSeats">
+      </div>
+
+      <button type="button" (click)="removeCabin(i)">Remove Cabin</button>
+    </div>
+  </div>
+
+  <div>
+    <button type="button" (click)="addCabin()">Add Cabin</button>
+  </div>
+
+  <button type="submit">Create Flight</button>
+</form>

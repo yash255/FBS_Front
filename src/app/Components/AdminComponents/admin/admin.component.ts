@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FlightService } from 'src/app/Services/flight.service';
-import { Flight } from 'src/app/Models/FlightModel';
+import { FlightDto } from 'src/app/Models/FlightModel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -8,9 +9,9 @@ import { Flight } from 'src/app/Models/FlightModel';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  flights: Flight[] | undefined;
+  flights: FlightDto[] | undefined;
 
-  constructor(private flightService: FlightService) { }
+  constructor(private flightService: FlightService, private router: Router) { }
 
   ngOnInit() {
     this.getFlights();
@@ -27,5 +28,13 @@ export class AdminComponent implements OnInit {
     );
   }
 
+  createFlight() {
+    this.router.navigate(['/create-flight']);
+  }
+
  
+  updateflight(id: number) {
+    this.router.navigate(['/update-flight'])
+
+  }
 }

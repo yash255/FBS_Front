@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
+import {Flight }from 'src/app/Models/FlightModel';
 
 @Component({
   selector: 'app-search',
